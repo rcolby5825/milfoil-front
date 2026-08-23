@@ -1,4 +1,4 @@
-# Milfoil Field Atlas
+# Milfoil 
 
 A React + Vite field operations dashboard served by Nginx in production.
 
