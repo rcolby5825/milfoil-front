@@ -59,6 +59,33 @@ body {
   transform: translateX(-50%);
 }
 
+.placeholder-nav {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 2;
+  display: flex;
+  gap: 20px;
+}
+
+.placeholder-nav a {
+  color: var(--border-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.placeholder-nav a:hover,
+.placeholder-nav a:focus-visible {
+  text-decoration: underline;
+}
+
+.placeholder-nav .cart-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
 .page-footer {
   position: absolute;
   left: 0;
@@ -67,6 +94,25 @@ body {
   height: 125px;
   border: 2px solid var(--border-color);
   background: var(--background-color);
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 25px;
+}
+
+.footer-nav a {
+  color: var(--border-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible {
+  text-decoration: underline;
 }
 
 .logo-wrap {
@@ -102,6 +148,21 @@ body {
   background: var(--background-color);
 }
 
+.mobile-image-placeholder {
+  display: none;
+}
+
+.desktop-image-placeholder {
+  position: absolute;
+  top: 300px;
+  right: 50px;
+  width: 400px;
+  height: 300px;
+  border: 2px solid var(--border-color);
+  border-radius: 25px;
+  background: var(--background-color);
+}
+
 @media (max-width: 700px) {
   .image-band {
     height: 150px;
@@ -113,8 +174,8 @@ body {
   }
 
   .logo-wrap {
-    width: 112.5px;
-    height: 112.5px;
+    width: 117.5px;
+    height: 117.5px;
   }
 
   .mobile-text-box {
@@ -127,16 +188,43 @@ body {
     transform: none;
   }
 
+  .mobile-image-placeholder {
+    position: absolute;
+    top: 300px;
+    left: 25px;
+    display: block;
+    width: calc(100% - 50px);
+    height: 300px;
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    background: var(--background-color);
+  }
+
+  .desktop-image-placeholder {
+    display: none;
+  }
+
   .desktop-banner-text-box {
-    top: 10px;
+    top: 35px;
     right: 25px;
     left: auto;
     width: calc(100% - 50px);
     max-width: 225px;
     display: block;
-    padding-top: 10px;
+    height: 85px;
+    padding-top: 20px;
     padding-right: 25px;
     text-align: right;
     transform: none;
+  }
+
+  .placeholder-nav {
+    top: 10px;
+    right: 10px;
+    gap: 10px;
+  }
+
+  .placeholder-nav a {
+    font-size: 0.75rem;
   }
 }
