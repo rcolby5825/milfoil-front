@@ -1,4 +1,6 @@
 :root {
+  --border-color: #5c110c;
+  --background-color: #e6f0ea;
   font-family: Inter, "Segoe UI", sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -21,23 +23,50 @@ body,
 
 body {
   margin: 0;
+  background: var(--background-color);
 }
 
 .placeholder-shell {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flow-root;
+  width: 100%;
   min-height: 100vh;
   padding: 0;
 }
 
 .image-band {
-  width: 100%;
-  height: 60vh;
-  min-height: 420px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 200px;
+  min-height: 200px;
   margin: 0;
-  border: 1px solid transparent;
-  background: transparent;
+  border: 2px solid var(--border-color);
+  background: var(--background-color);
+}
+
+.desktop-banner-text-box {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  width: 400px;
+  height: 100px;
+  padding-top: 35px;
+  border: 2px solid var(--border-color);
+  border-radius: 25px;
+  background: var(--background-color);
+  transform: translateX(-50%);
+}
+
+.page-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 125px;
+  border: 2px solid var(--border-color);
+  background: var(--background-color);
 }
 
 .logo-wrap {
@@ -45,17 +74,11 @@ body {
   left: 0;
   top: 0;
   z-index: 1;
-  width: min(260px, 32vw);
-  padding: 18px;
-  background: transparent;
-  border: 1px solid transparent;
-  border-left: none;
-  border-top: none;
-}
-
-.logo-box {
-  min-height: 110px;
-  border: 2px dashed transparent;
+  width: 150px;
+  height: 150px;
+  background: var(--background-color);
+  border: 2px solid var(--border-color);
+  border-radius: 0 0 15px 0;
   display: grid;
   place-items: center;
   font-size: clamp(0.9rem, 1.8vw, 1.6rem);
@@ -63,14 +86,57 @@ body {
   font-weight: 700;
 }
 
+.mobile-text-box {
+  position: absolute;
+  top: 300px;
+  left: 50px;
+  z-index: 2;
+  display: block;
+  width: calc(100% - 75px);
+  max-width: 400px;
+  height: 300px;
+  padding: 25px;
+  padding-top: 50px;
+  border: 2px solid var(--border-color);
+  border-radius: 25px;
+  background: var(--background-color);
+}
+
 @media (max-width: 700px) {
   .image-band {
-    height: 50vh;
-    min-height: 320px;
+    height: 150px;
+    min-height: 150px;
+  }
+
+  .page-footer {
+    height: 100px;
   }
 
   .logo-wrap {
-    width: min(220px, 56vw);
-    padding: 14px;
+    width: 112.5px;
+    height: 112.5px;
+  }
+
+  .mobile-text-box {
+    position: absolute;
+    top: 175px;
+    left: 25px;
+    width: calc(100% - 50px);
+    height: auto;
+    min-height: 100px;
+    transform: none;
+  }
+
+  .desktop-banner-text-box {
+    top: 10px;
+    right: 25px;
+    left: auto;
+    width: calc(100% - 50px);
+    max-width: 225px;
+    display: block;
+    padding-top: 10px;
+    padding-right: 25px;
+    text-align: right;
+    transform: none;
   }
 }
