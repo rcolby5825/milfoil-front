@@ -1,29 +1,32 @@
-import { ShoppingCart } from 'lucide-react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import IndexMainBody from './components/IndexMainBody'
+import RoutePlaceholder from './components/RoutePlaceholder'
 
 function App() {
   return (
-    <main className="placeholder-shell">
-      <header className="image-band" aria-label="Banner header">
-        <input className="desktop-banner-text-box" type="text" aria-label="Banner text box" />
-        <nav className="placeholder-nav" aria-label="Main navigation">
-          <a href="#login">Login</a>
-          <a className="cart-link" href="#cart" aria-label="Shopping cart">
-            <ShoppingCart aria-hidden="true" size={20} strokeWidth={2} />
-          </a>
-        </nav>
-      </header>
-      <div className="logo-wrap" aria-label="Logo placeholder">LOGO</div>
-      <input className="mobile-text-box" type="text" aria-label="Text box" />
-      <div className="mobile-image-placeholder" aria-label="Image placeholder" />
-      <div className="desktop-image-placeholder" aria-label="Desktop image placeholder" />
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<SiteLayout />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
 
-      <footer className="page-footer" aria-label="Footer">
-        <nav className="footer-nav" aria-label="Footer navigation">
-          <a href="#sitemap">Site Map</a>
-          <a href="#contact">Contact</a>
-          <a href="#about">About</a>
-        </nav>
-      </footer>
+function SiteLayout() {
+  return (
+    <main className="placeholder-shell">
+      <Header />
+      <Routes>
+        <Route path="/" element={<IndexMainBody />} />
+        <Route path="/login" element={<RoutePlaceholder title="Login" />} />
+        <Route path="/cart" element={<RoutePlaceholder title="Shopping Cart" />} />
+        <Route path="/sitemap" element={<RoutePlaceholder title="Site Map" />} />
+        <Route path="/contact" element={<RoutePlaceholder title="Contact" />} />
+        <Route path="/about" element={<RoutePlaceholder title="About" />} />
+      </Routes>
+      <Footer />
     </main>
   )
 }
