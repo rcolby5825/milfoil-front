@@ -1,11 +1,13 @@
 function App() {
   return (
     <main className="placeholder-shell">
-      <div className="logo-wrap" aria-label="Logo placeholder">
-        <div className="logo-box">LOGO</div>
-      </div>
+      <header className="image-band" aria-label="Banner header">
+        <input className="desktop-banner-text-box" type="text" aria-label="Banner text box" />
+      </header>
+      <div className="logo-wrap" aria-label="Logo placeholder">LOGO</div>
+      <input className="mobile-text-box" type="text" aria-label="Text box" />
 
-      <div className="image-band" aria-label="Image placeholder" />
+      <footer className="page-footer" aria-label="Footer" />
     </main>
   )
 }
